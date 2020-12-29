@@ -1,0 +1,97 @@
+<div>
+<section class="shop" >
+  <h1>Checkout</h1>
+  <p>Dechen Wangmo on 24th Novemvber 2020</p>
+  <br>
+  <h2>Your Order</h2>
+  <section>
+    <table class="table">
+      <thead>
+      <tr>
+        <th ></th>
+        <th>Product Image</th>
+        <th>Product</th>
+        <th>Price</th>
+        <th>Quantity</th>
+        <th>Sub Total</th>
+      </tr>
+      </thead>
+
+      <tbody>
+      <tr>
+        <td > <i class="fa fa-times" aria-hidden="true"></i></td>
+        <td><img src="assets/shop/kewa.jpg" alt="kewa"></td>
+        <td data-label="Product">Kewa Datshi</td>
+        <td data-label="Price">Nu. 100</td>
+        <td data-label="Quantity">1</td>
+        <td data-label="Sub Total">Nu. 100</td>
+      </tr>
+
+      <tr>
+        <td > <i class="fa fa-times" aria-hidden="true"></i></td>
+        <td><img src="assets/shop/emadatsi.jpg" alt="ema"></td>
+        <td data-label="Product">Ema Datshi</td>
+        <td data-label="Price">Nu. 100</td>
+        <td data-label="Quantity">1</td>
+        <td data-label="Sub Total">Nu. 100</td>
+      </tr>
+
+      <tr>
+        <td > <i class="fa fa-times" aria-hidden="true"></i></td>
+        <td><img src="assets/shop/mash.jpg" alt="Shamu"></td>
+        <td data-label="Product">Shamu Datshi</td>
+        <td data-label="Price">Nu. 100</td>
+        <td data-label="Quantity">1</td>
+        <td data-label="Sub Total">Nu. 100</td>
+      </tr>
+
+      </tbody>
+    </table>
+  </section>
+  <br>
+  <h2>Total</h2>
+  <section>
+    <table class="table">
+      <thead>
+      <tr>
+        <th>Total</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr>
+        <td>Nu. 300</td>
+      </tr>
+      </tbody>
+    </table>
+  </section>
+  <br>
+  <button ><a routerLink="/shop">Shop More</a></button>
+</section>
+<section class="log" >
+  <div>
+    <h1>Billing Details</h1>
+    <br>
+    <form>
+      <input name="name" type="text"  placeholder="Full Name">
+      <br><br>
+      <input name="Phone number" type="text"  placeholder="Phone Number">
+      <br><br>
+      <input name="email" type="text"  placeholder="Email Address">
+      <br><br>
+      <input onclick='document.getElementById("success").innerHTML = " <h1>Thank You For Your Order</h1>\n"+
+"  <h2>Order Confirmed</h2>\n"+
+"  <p>You can also cancel your order here!</p>\n"+
+"  <br>\n" ' type="button" value="Place Order" class="sub">
+      <br>
+    </form>
+  </div>
+</section>
+
+<section class="shop" id="success">
+
+</section>
+<section class="shop" >
+  <button onclick='document.getElementById("success").innerHTML = "<h1>Your order is cancelled successfully</h1>"'>Cancel</button>
+</section>
+</div>
+

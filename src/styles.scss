@@ -1,0 +1,461 @@
+$headingfont: "papyrus", fantasy;
+$textcolor1: white;
+$textcolor2:black;
+$bgcolor1: brown;
+$bgcolor2: whitesmoke;
+
+@mixin flexcontent($content){
+  display: flex;
+  justify-content: $content;
+}
+@mixin flexwrapdir(){
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+}
+@mixin inputform{
+  height: 45px;
+  border: none;
+  border-radius: 15px;
+  background-color: $bgcolor2;
+}
+*{
+  box-sizing: border-box;
+  margin: 0;
+  line-height: 1.6;
+  scroll-behavior: smooth;
+}
+section{
+  @include flexcontent(center);
+  flex-wrap: wrap;
+
+}
+.intro{
+  background-image: url("assets/image/bg.jpg");
+  background-color: black;
+  flex-direction: column;
+  aside:nth-of-type(1){
+    @include flexcontent(space-around);
+  }
+}
+h1{
+  font-family: $headingfont;
+  font-size: xxx-large;
+}
+h2{
+  font-family: $headingfont;
+}
+a{
+  color: white;
+  text-decoration: none;
+}
+aside{
+  padding: 15px;
+  color: $textcolor1;
+}
+header{
+  flex:60px;
+
+  nav{
+    @include flexcontent(space-around);
+    padding: 10px;
+    font-size: 25px;
+    font-weight: bold;
+    position: fixed;
+    top: 52px;
+    width: 100%;
+    left: 0;
+    transition: 0.6s;
+    z-index: 1;
+
+    hr{
+      height: 60px;
+    }
+
+    a{
+      color: white;
+    }
+    a:hover{
+      color: brown;
+    }
+    a:not(:nth-of-type(4)){
+      margin-top: 25px;
+    }
+    .icon{
+      display: none;
+    }
+  }
+}
+
+nav.sticky{
+  background-color: white;
+  color: $bgcolor2;
+  top: 0;
+  margin: 0;
+
+  a{
+    color: black;
+    font-size: 20px;
+  }
+  img{
+    width:120px;
+    height: 70px;
+  }
+}
+aside:nth-of-type(2){
+  flex: 500px;
+  padding: 50px;
+}
+@media screen and (max-width: 600px) {
+  .topnav a:not(:nth-of-type(4)) {display: none;}
+  .topnav a.icon {
+    float: right;
+    display: block;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .topnav.responsive {position: relative;}
+  .topnav.responsive .icon {
+    position: absolute;
+    right: 5px;
+    top: 5px;
+  }
+
+  .topnav.responsive nav{
+    background-color: white;
+    @include flexwrapdir;
+    a:nth-of-type(4){
+      display:none;
+    }
+    hr{
+      display: none;
+    }
+  }
+  .topnav.responsive a {
+    float: left;
+    display: block;
+    text-align: left;
+    color: black;
+    font-size: 20px;
+  }
+}
+
+article{
+  flex: 400px;
+  justify-content: center;
+
+  img{
+    width: 80%;
+    height: auto;
+    margin: 50px;
+    box-shadow: 7px 7px 7px gray;
+  }
+}
+.category{
+  padding: 30px;
+  margin: 20px;
+  h1{
+    color: brown;
+  }
+  p{
+    font-size: 20px;
+  }
+
+}
+.gallery{
+  @include flexcontent(space-evenly);
+  flex-wrap: wrap;
+  img{
+    width: 32%;
+  }
+
+}
+.service{
+  flex-direction: column;
+  text-align: center;
+
+  div{
+    @include flexcontent(space-around);
+    flex-wrap: wrap;
+  }
+  span{
+    color: brown;
+    font-weight: bold;
+    font-size: 20px;
+  }
+
+}
+button{
+  background-color: black;
+  width: 130px;
+  height: 50px;
+  padding: 15px;
+  border-radius: 25px;
+  font-weight: bold;
+  color: $textcolor1;
+  border: brown;
+}
+button:hover{
+  background-color: $bgcolor1;
+}
+
+//scss for footer
+footer{
+  display: flex;
+  flex-direction: column;
+  background-color: black;
+  color: $textcolor1;
+  padding: 40px;
+  font-size: large;
+
+  article{
+    padding: 15px;
+  }
+
+  article:nth-of-type(n+2){
+    flex: 1 100px;
+
+  }
+  article:nth-of-type(1){
+    flex: 2;
+  }
+
+  li{
+    list-style-type: none;
+  }
+}
+.f1{
+  display: flex;
+  flex-wrap: wrap;
+}
+.f2{
+  text-align: center;
+  padding: 20px;
+  flex-direction: column;
+}
+//scss for menus
+.menus{
+  section{
+    width: 80%;
+    padding: 20px;
+    font-weight: bold;
+  }
+  .hori{
+    border-bottom: 5px solid brown;
+    width: 75%;
+
+  }
+  #minihead{
+    width: 100%;
+    text-align: center;
+  }
+  .minimenu{
+    display: flex;
+    height: 50px;
+    font-size: 25px;
+    justify-content: space-around;
+
+  }
+  a{
+    color: $textcolor2;
+  }
+  hr{
+    border: 1px dashed brown;
+  }
+  img{
+    width: 100px;
+    height: 100px;
+    box-shadow: 3px 3px 5px gray;
+  }
+  span{
+    color: brown;
+    font-size: 20px;
+  }
+  .menu{
+    @include flexcontent(space-around);
+    flex: 350px;
+  }
+
+}
+//scss for login
+.log{
+
+  padding: 50px;
+  font-weight: bold;
+
+  div{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-top: 1px gray solid;
+    border-left: 1px gray solid;
+    padding: 30px;
+    box-shadow: 10px 10px 10px gray;
+
+    input{
+      width: 350px;
+      @include inputform;
+    }
+  }
+
+  textarea{
+    width: 350px;
+    height: 100px;
+  }
+  .sub{
+    background-color: $bgcolor1;
+    border-radius: 20px;
+    color: $textcolor1;
+  }
+  a{
+    color: brown;
+  }
+}
+
+::placeholder{
+  font-size: 18px;
+}
+.contact{
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 50px;
+  margin-left: 100px;
+  margin-right: 100px;
+  box-shadow: 5px 0 7px gray;
+  p{
+    line-height: 2;
+  }
+  img{
+    width: 100%;
+  }
+  div{
+    padding: 20px;
+  }
+  div:nth-of-type(1){
+    flex: 300px;
+  }
+  div:nth-of-type(2) {
+    flex: 200px;
+  }
+}
+//scss for shop
+.shop{
+
+  flex-direction: column;
+  padding: 15px;
+  align-items: center;
+  section{
+    display: flex;
+  }
+  article{
+    display: flex;
+    flex: 200px;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  img{
+    width: 85%;
+    height: 40%;
+    border-radius: 10px;
+  }
+}
+
+.table{
+  width: 100%;
+  border-collapse: collapse;
+
+  img{
+    width: 150px;
+    height: auto;
+  }
+
+  td,th{
+    padding: 12px 15px;
+    border: 1px solid darkgray;
+    text-align: center;
+  }
+  th{
+    background-color: black;
+    color: $textcolor1;
+  }
+}
+@media(max-width: 700px) {
+  .table thead, .table th{
+    display: none;
+  }
+  .table,  .table tr, .table td{
+    display: flex;
+    flex-wrap: wrap;
+    flex: 80%;
+  }
+  tr{
+    margin-bottom: 15px;
+  }
+  td:nth-of-type(-n + 2){
+    justify-content: center;
+  }
+  td{
+    justify-content: flex-end;
+    position: relative;
+    padding-left: 50%;
+  }
+  .table td::before{
+    content: attr(data-label);
+    justify-content: flex-start;
+    position: absolute;
+    left: 0;
+    width: 50%;
+    font-weight: bold;
+  }
+}
+#myBtn {
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  right: 30px;
+  z-index: 2;
+  border: none;
+  background-color: $bgcolor1;
+  color: $textcolor1;
+  padding: 15px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
+
+#myBtn:hover {
+  background-color: black;
+}
+.events{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 30px;
+
+  img{
+    width: 120px;
+    height: 140px;
+    box-shadow: none;
+  }
+}
+.reserve{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  input{
+    width: 100%;
+    @include inputform;
+
+  }
+  button{
+    margin-left: 130px;
+  }
+  form{
+    width: 100%;
+    padding: 10px;
+  }
+}
+
